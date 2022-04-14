@@ -36,7 +36,9 @@ hostnamectl set-hostname hadoop100
 vim /etc/sysconfig/network-scripts/ifcfg-ens33 
 ```
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/80107e0c64654383818a0e834713ec1e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 进行如下修改
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/49334e5d26d3426b8e0f3fee8669250f.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ## 3.添加普通用户
 
