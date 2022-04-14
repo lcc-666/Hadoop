@@ -50,6 +50,7 @@ passwd atguigu
 vim /etc/sudoers
 ```
 直接加一行
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/e5aa2838a3574691a903cd8d812af317.png)
 ## 4.创建文件目录
 
@@ -67,7 +68,9 @@ rpm -qa | grep -i java | xargs -n1 rpm -e
 由于博主这里已经安装好了，就不演示卸载了。
 ## 6.配置网络
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/f2c0ed54e51649e986ab24f6149419b7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 由于咱们使用的是静态网址DHCP可以不用设置。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c20b2d0095394786a3283587f713134e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/1cfe96966a87477aa5525bf01718d9ff.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 
@@ -76,6 +79,7 @@ rpm -qa | grep -i java | xargs -n1 rpm -e
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/3e77c83c2e034452acd792ff8d22de1e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 注意是Vmare8，别选错了。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c359e3df10514a688da0c87c0fecf9c8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/7826a25a4c7240afb31e2028fba2f822.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 
@@ -98,6 +102,7 @@ systemctl disable firewalld.service
 vim /etc/hosts
 ```
 多写几个
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/cd03428c62fb4c178789692e87d614f4.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 ```bash
@@ -121,16 +126,21 @@ reboot重启即可。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/44b3c1904c3d429386410c9bcf88b4f3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/793e83d699f0423190ecf6ed1e49f1d1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/7218b57f303f4114846444834ea03dc1.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 自行修改名字和位置
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/cd449b4aa41a49539efd53daa5fb9074.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 我已经克隆过来，就不再做了
 将克隆机的IP和主机名做相应修改就可以了。
 我又克隆了hadoop102 103 104三台服务器。暂时是够了，不够再加。
 
 # 四、Xshell链接
 修改windows的hosts
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2e3c3f57b64249d6b7fd822a8112b882.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/d2aa593f051a4817b06f490d5c53643a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 在后边追加，然后用物理机ping一下虚拟机。这里以102为例。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/58e9365aa8aa4260a7665ac20208b470.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 可以看到用IP和域名都是可以的。确定可以联通后用Xshell链接。
@@ -141,6 +151,7 @@ reboot重启即可。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/ff002f854762496e84ab1a8de2d6d7e0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/460d9dacb78b4db1a30eebcac7f7ee21.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/227aeacca3e74b8f9e1a16a12af27c98.png)
+
 由于咱们以后的实验都是用Xshell连接的，也为了节省硬件资源，咱们把可视化关掉。
 
 ```bash
