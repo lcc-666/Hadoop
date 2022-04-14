@@ -86,7 +86,9 @@ rpm -qa | grep -i java | xargs -n1 rpm -e
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/7826a25a4c7240afb31e2028fba2f822.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/29aaf538d043444ebc580f6032ae0b90.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 然后重启网卡ping一下百度。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/8c790c2dd61547c3a7e6b3628c0ea121.png)
 ## 7.安装epel-release
 ```bash
@@ -145,11 +147,14 @@ reboot重启即可。
 
 在后边追加，然后用物理机ping一下虚拟机。这里以102为例。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/58e9365aa8aa4260a7665ac20208b470.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 可以看到用IP和域名都是可以的。确定可以联通后用Xshell链接。
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/269ab18ed87b47b7b90b61368366829e.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c72e1909d44c43638211a6e19c982f3d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 然后连接。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/ff002f854762496e84ab1a8de2d6d7e0.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/460d9dacb78b4db1a30eebcac7f7ee21.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/227aeacca3e74b8f9e1a16a12af27c98.png)
