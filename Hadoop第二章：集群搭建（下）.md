@@ -167,3 +167,4 @@ myhadoop.sh start
 
 # 总结
 Hadoop的集群搭建，算是结束了，hadoop学习才仅仅是刚刚开始。任重而道远啊。
+
