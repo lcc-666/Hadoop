@@ -1,7 +1,10 @@
 # 系列文章目录
 [Hadoop第一章：环境搭建](https://blog.csdn.net/weixin_50835854/article/details/124135328)
+
 [Hadoop第二章：集群搭建（上）](https://blog.csdn.net/weixin_50835854/article/details/124152234?spm=1001.2014.3001.5501)
+
 [Hadoop第二章：集群搭建（中）](https://blog.csdn.net/weixin_50835854/article/details/124194723)
+
 Hadoop第二章：集群搭建（下）
 
 
@@ -19,9 +22,13 @@ Hadoop第二章：集群搭建（下）
 
 # 一、配置历史服务器
 上一次我们完成了一个简单的分布式计算，现在我们想查看历史信息。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c2c620b3bb0e49beb817e01077e597f5.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 这时就会报错，就是因为我们没有配置历史服务器。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/69f1d66ec296471983e971090a3f7630.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 ## 1.配置文件
 
 ```bash
@@ -44,6 +51,7 @@ vim /opt/module/hadoop-3.2.3/etc/hadoop/mapred-site.xml
 </property>
 ```
 继续追加
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2c13328c44c94a6bbfb23172d9b833be.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 ## 2.分发脚本
 
@@ -56,6 +64,7 @@ xsync /opt/module/hadoop-3.2.3/etc/hadoop/
 ```bash
 mapred --daemon start historyserver
 ```
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/65a379d6c03f418f89ac73906f105164.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 从新进行云计算
@@ -67,7 +76,9 @@ hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.3.jar wordcount 
 ```
 然后web访问历史记录。
 http://hadoop102:19888/jobhistory/
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/4e960afe09f640f6b45fafb2b3f8bdac.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
+
 因为我进行了多次实验，可能记录比较多。
 
 
@@ -136,11 +147,13 @@ done
 ```bash
 myhadoop.sh stop
 ```
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/fc2c931272c740e3b85273ec9b518359.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_20,color_FFFFFF,t_70,g_se,x_16)
 
 ```bash
 jpsall
 ```
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/3c200bcf9e11427482b90a6330cd2de0.png)
 
 咱们在启动一下。
@@ -148,6 +161,7 @@ jpsall
 ```bash
 myhadoop.sh start
 ```
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/b8a9a83163ea4fc5815adc6f96cc23b3.png)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/30cbed7d39914d53b5fe20519703f3c2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA6LaF5ZOlLS0=,size_18,color_FFFFFF,t_70,g_se,x_16)
 
