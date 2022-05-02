@@ -1,83 +1,111 @@
-# ÏµÁĞÎÄÕÂÄ¿Â¼
-[HadoopµÚÒ»ÕÂ£º»·¾³´î½¨](https://blog.csdn.net/weixin_50835854/article/details/124135328)
-[HadoopµÚ¶şÕÂ£º¼¯Èº´î½¨£¨ÉÏ£©](https://blog.csdn.net/weixin_50835854/article/details/124152234?spm=1001.2014.3001.5501)
-[HadoopµÚ¶şÕÂ£º¼¯Èº´î½¨£¨ÖĞ£©](https://blog.csdn.net/weixin_50835854/article/details/124194723)
-[HadoopµÚ¶şÕÂ£º¼¯Èº´î½¨£¨ÏÂ£©](https://blog.csdn.net/weixin_50835854/article/details/124211120)
-[HadoopµÚÈıÕÂ£ºShellÃüÁî](https://blog.csdn.net/weixin_50835854/article/details/124456642)
-HadoopµÚËÄÕÂ£ºClient¿Í»§¶Ë
+# ç³»åˆ—æ–‡ç« ç›®å½•
+[Hadoopç¬¬ä¸€ç« ï¼šç¯å¢ƒæ­å»º](https://blog.csdn.net/weixin_50835854/article/details/124135328)
+
+[Hadoopç¬¬äºŒç« ï¼šé›†ç¾¤æ­å»ºï¼ˆä¸Šï¼‰](https://blog.csdn.net/weixin_50835854/article/details/124152234?spm=1001.2014.3001.5501)
+
+[Hadoopç¬¬äºŒç« ï¼šé›†ç¾¤æ­å»ºï¼ˆä¸­ï¼‰](https://blog.csdn.net/weixin_50835854/article/details/124194723)
+
+[Hadoopç¬¬äºŒç« ï¼šé›†ç¾¤æ­å»ºï¼ˆä¸‹ï¼‰](https://blog.csdn.net/weixin_50835854/article/details/124211120)
+
+[Hadoopç¬¬ä¸‰ç« ï¼šShellå‘½ä»¤](https://blog.csdn.net/weixin_50835854/article/details/124456642)
+
+Hadoopç¬¬å››ç« ï¼šClientå®¢æˆ·ç«¯
 
 ---
 
-@[TOC](ÎÄÕÂÄ¿Â¼)
+@[TOC](æ–‡ç« ç›®å½•)
 
 ---
 
-# Ç°ÑÔ
-ÏÖÔÚ¿ªÊ¼ÎÒÃÇÊ¹ÓÃjavaÀ´±àĞ´Ò»¸öHadoopµÄClinet£¬ÎªÊ²Ã´ÒªÕâÃ´×öÄØ£¬¼òµ¥ËµÃ÷Ò»ÏÂ£¬Ö®Ç°ÎÒÃÇÊ¹ÓÃHadoop½øĞĞ²Ù×÷£¬¶¼ĞèÒªÁ¬½Óµ½Ä³Ò»¸ö½ÚµãÉÏ£¬ÕâÑù¿É²Ù×÷ĞÔ±È½ÏµÍ£¬ËùÒÔÔÛÃÇÒªÅäÖÃÒ»¸ö¿Í»§¶Ë¡£
+# å‰è¨€
+ç°åœ¨å¼€å§‹æˆ‘ä»¬ä½¿ç”¨javaæ¥ç¼–å†™ä¸€ä¸ªHadoopçš„Clinetï¼Œä¸ºä»€ä¹ˆè¦è¿™ä¹ˆåšå‘¢ï¼Œç®€å•è¯´æ˜ä¸€ä¸‹ï¼Œä¹‹å‰æˆ‘ä»¬ä½¿ç”¨Hadoopè¿›è¡Œæ“ä½œï¼Œéƒ½éœ€è¦è¿æ¥åˆ°æŸä¸€ä¸ªèŠ‚ç‚¹ä¸Šï¼Œè¿™æ ·å¯æ“ä½œæ€§æ¯”è¾ƒä½ï¼Œæ‰€ä»¥å’±ä»¬è¦é…ç½®ä¸€ä¸ªå®¢æˆ·ç«¯ã€‚
 
 ---
 
 
-# Ò»¡¢ÅäÖÃ»·¾³
-ÓÉÓÚ¿Í»§¶Ë´ó²¿·Ö¶¼ÔÚwindows£¬ËùÒÔÔÛÃÇÅäÖÃÒÀÀµ½øĞĞÁ¬½Ó£¬µ«ÊÇwindows±¾Éí²»×÷Îª¼¯ÈºµÄÒ»¸ö½Úµã£¬ËùÒÔ²»ĞèÒªÅäÖÃÍêÕûµÄHadoop¡£
-## 1. Èí¼ş×¼±¸
+# ä¸€ã€é…ç½®ç¯å¢ƒ
+ç”±äºå®¢æˆ·ç«¯å¤§éƒ¨åˆ†éƒ½åœ¨windowsï¼Œæ‰€ä»¥å’±ä»¬é…ç½®ä¾èµ–è¿›è¡Œè¿æ¥ï¼Œä½†æ˜¯windowsæœ¬èº«ä¸ä½œä¸ºé›†ç¾¤çš„ä¸€ä¸ªèŠ‚ç‚¹ï¼Œæ‰€ä»¥ä¸éœ€è¦é…ç½®å®Œæ•´çš„Hadoopã€‚
+## 1. è½¯ä»¶å‡†å¤‡
 
- 1. [WindowsÒÀÀµ](https://gitee.com/fulsun/winutils-1/tree/master)
-ÒòÎªÎÒµÄ¼¯ÈºÓÃµÄÊÇ3.2£¬ËùÒÔÒÀÀµÒ²ÓÃ3.2¼´¿É£¬Ğ¡°æ±¾²»ÓÃÔÚÒâ
+ 1. [Windowsä¾èµ–](https://gitee.com/fulsun/winutils-1/tree/master)
+ 
+å› ä¸ºæˆ‘çš„é›†ç¾¤ç”¨çš„æ˜¯3.2ï¼Œæ‰€ä»¥ä¾èµ–ä¹Ÿç”¨3.2å³å¯ï¼Œå°ç‰ˆæœ¬ä¸ç”¨åœ¨æ„
+
  2. [idea](https://www.jetbrains.com/idea/download/#section=windows)
-ÎÒÓĞÑ§ÉúµÄ½ÌÓıÉêÇëÓÃµÄÊÇ×¨Òµ°æ£¬ÉçÇø°æÒ²¿ÉÒÔ¡£
+ 
+æˆ‘æœ‰å­¦ç”Ÿçš„æ•™è‚²ç”³è¯·ç”¨çš„æ˜¯ä¸“ä¸šç‰ˆï¼Œç¤¾åŒºç‰ˆä¹Ÿå¯ä»¥ã€‚
  3. [maven](https://maven.apache.org/download.cgi)
- ±ØÒªµÄ°²×°ÒÀÀµ
+ å¿…è¦çš„å®‰è£…ä¾èµ–
  
  4. jdk8
- Õâ¸ö²»·ÅµØÖ·ÁË£¬´ó¼Ò×Ô¼ººÜÈİÒ×ÕÒµÄ¡£
-## 2.ÅäÖÃ»·¾³±äÁ¿
-ÔÛÃÇÔÚÕâÀï¾Í°ÑĞèÒªµÄ»·¾³Ò»´Î¶¼ÅäÁË
+ è¿™ä¸ªä¸æ”¾åœ°å€äº†ï¼Œå¤§å®¶è‡ªå·±å¾ˆå®¹æ˜“æ‰¾çš„ã€‚
+## 2.é…ç½®ç¯å¢ƒå˜é‡
+å’±ä»¬åœ¨è¿™é‡Œå°±æŠŠéœ€è¦çš„ç¯å¢ƒä¸€æ¬¡éƒ½é…äº†
 hadoop
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/dec13ae05972460fb7978f991f915181.png)
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/dec13ae05972460fb7978f991f915181.png)
+
 jdk8
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/8aa747e529fb460d9fafa136086f9e8b.png)
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/8aa747e529fb460d9fafa136086f9e8b.png)
+
 maven
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/91d571e086904574a8198a2d6487c92e.png)
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/7a32745831984b80911b51f389da72ab.png)
-¼ì²éÅäÖÃ
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/91d571e086904574a8198a2d6487c92e.png)
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/7a32745831984b80911b51f389da72ab.png)
+
+æ£€æŸ¥é…ç½®
 jdk
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/202d575bdfbc4873a57cd0a74a8dadd3.png)
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/202d575bdfbc4873a57cd0a74a8dadd3.png)
+
 maven
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/404c1f563d6746898d8942223049a95d.png)
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/404c1f563d6746898d8942223049a95d.png)
+
 hadoop
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/aeaf94f8cc21452da60a2f0b93fac83b.png)
-Ë«»÷Õâ¸öÎÄ¼şÓĞÒ»¸öºÚ¿ò¿òÒ»ÉÁ¶ø¹ı£¬´ú±í³É¹¦¡£
 
-## 3.maven»»Ô´
-Ê¹ÓÃmavenÊ±»áÏÂÔØÒ»Ğ©ÒÀÀµ°ü£¬×îºÃ»»Ô´Ò»ÏÂ£¬ÕâÑùÏÂÔØ»á±È½Ï¿ì£¬ÔÛÃÇÊ¹ÓÃ°¢ÀïÔ´¡£
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/eb55d0ed25494294bfd2f47a7a3bff36.png)
-¼ÇÊÂ±¾´ò¿ª
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/411e296cc41943328644d4d230c305ce.png)
-ÔÚmirrorsÀïÃæ°Ñ°¢ÀïÔ´µÄÅäÖÃ¼Ó½øÈ¥¡£
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/aeaf94f8cc21452da60a2f0b93fac83b.png)
 
-ĞŞ¸ÄÄ¬ÈÏ²Ö¿â¡£
-¼Ç×¡ÒªÏÈ´´½¨Õâ¸öÎÄ¼ş¼Ğ¡£
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/242074391b754550a39eb603e68f6f53.png)
+åŒå‡»è¿™ä¸ªæ–‡ä»¶æœ‰ä¸€ä¸ªé»‘æ¡†æ¡†ä¸€é—ªè€Œè¿‡ï¼Œä»£è¡¨æˆåŠŸã€‚
 
+## 3.mavenæ¢æº
+ä½¿ç”¨mavenæ—¶ä¼šä¸‹è½½ä¸€äº›ä¾èµ–åŒ…ï¼Œæœ€å¥½æ¢æºä¸€ä¸‹ï¼Œè¿™æ ·ä¸‹è½½ä¼šæ¯”è¾ƒå¿«ï¼Œå’±ä»¬ä½¿ç”¨é˜¿é‡Œæºã€‚
 
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/eb55d0ed25494294bfd2f47a7a3bff36.png)
 
+è®°äº‹æœ¬æ‰“å¼€
 
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/411e296cc41943328644d4d230c305ce.png)
 
+åœ¨mirrorsé‡Œé¢æŠŠé˜¿é‡Œæºçš„é…ç½®åŠ è¿›å»ã€‚
 
+ä¿®æ”¹é»˜è®¤ä»“åº“ã€‚
+è®°ä½è¦å…ˆåˆ›å»ºè¿™ä¸ªæ–‡ä»¶å¤¹ã€‚
 
-# ¶ş¡¢´´½¨ÏîÄ¿
-## 1.´´½¨maven
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/facbf81540fa40b593cddcf2f392244d.png)![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/e1419d0600a2466f9ced2822159077b1.png)
-Ñ¡ÔñºÏÊÊµÄ´æ´¢Î»ÖÃ£¬ÒòÎªÎÒÒÑ¾­´´½¨¹ıÁË£¬×îºóÒ»²½ÎÒ¾Í²»Ö´ĞĞÁË¡£
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/242074391b754550a39eb603e68f6f53.png)
 
-## 2.ĞŞ¸ÄideaÄ¬ÈÏÔ´
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/2021101a9ff943ae9581b745bddcc7de.png)
-°ÑÕâ¼¸¸öµØ·½¶¼¸Ä³ÉÔÛÃÇ±¾µØ×Ô¶¨ÒåµÄ¡£
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/87f023e484f04684a39ef7444ab3adb3.png)
-ĞŞ¸Äpom.xml
-Èç¹ûÊ±µÚÒ»´ÎÊ¹ÓÃ£¬ÓÒÉÏ½Ç»áÓĞÒ»¸öĞ¡È¦È¦£¬µã»÷Ëü£¬Ëû»á¸ù¾İÄãµÄpomÏÂÔØÏàÓ¦µÄjar°ü£¬ÒòÎªÔÛÃÇ»»¹ıÔ´ÁË£¬ÏÂÔØ»¹ÊÇºÜ¿ìµÄ¡£
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/6d11306964b34f6da3e8fe306305a8b3.png)
+# äºŒã€åˆ›å»ºé¡¹ç›®
+## 1.åˆ›å»ºmaven
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/facbf81540fa40b593cddcf2f392244d.png)![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/e1419d0600a2466f9ced2822159077b1.png)
+
+é€‰æ‹©åˆé€‚çš„å­˜å‚¨ä½ç½®ï¼Œå› ä¸ºæˆ‘å·²ç»åˆ›å»ºè¿‡äº†ï¼Œæœ€åä¸€æ­¥æˆ‘å°±ä¸æ‰§è¡Œäº†ã€‚
+
+## 2.ä¿®æ”¹ideaé»˜è®¤æº
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/2021101a9ff943ae9581b745bddcc7de.png)
+
+æŠŠè¿™å‡ ä¸ªåœ°æ–¹éƒ½æ”¹æˆå’±ä»¬æœ¬åœ°è‡ªå®šä¹‰çš„ã€‚
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/87f023e484f04684a39ef7444ab3adb3.png)
+
+ä¿®æ”¹pom.xml
+
+å¦‚æœæ—¶ç¬¬ä¸€æ¬¡ä½¿ç”¨ï¼Œå³ä¸Šè§’ä¼šæœ‰ä¸€ä¸ªå°åœˆåœˆï¼Œç‚¹å‡»å®ƒï¼Œä»–ä¼šæ ¹æ®ä½ çš„pomä¸‹è½½ç›¸åº”çš„jaråŒ…ï¼Œå› ä¸ºå’±ä»¬æ¢è¿‡æºäº†ï¼Œä¸‹è½½è¿˜æ˜¯å¾ˆå¿«çš„ã€‚
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/6d11306964b34f6da3e8fe306305a8b3.png)
+
 ```bash
 <dependencies>
         <dependency>
@@ -97,9 +125,11 @@ hadoop
         </dependency>
     </dependencies>
 ```
-## 3.Ìí¼ÓÈÕÖ¾ÎÄ¼şÅäÖÃ
-ÔÚÏîÄ¿µÄsrc/main/resourcesÄ¿Â¼ÏÂ£¬ĞÂ½¨Ò»¸öÎÄ¼ş£¬ÃüÃûÎª¡°log4j.properties¡°£¬²¢Ìí¼ÓÒÔÏÂÄÚÈİ
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/8c25cffdd1bf45389eb1d28d71b0d851.png)
+## 3.æ·»åŠ æ—¥å¿—æ–‡ä»¶é…ç½®
+åœ¨é¡¹ç›®çš„src/main/resourcesç›®å½•ä¸‹ï¼Œæ–°å»ºä¸€ä¸ªæ–‡ä»¶ï¼Œå‘½åä¸ºâ€œlog4j.propertiesâ€œï¼Œå¹¶æ·»åŠ ä»¥ä¸‹å†…å®¹
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/8c25cffdd1bf45389eb1d28d71b0d851.png)
+
 
 ```bash
 log4j.rootLogger=INFO, stdout
@@ -111,9 +141,11 @@ log4j.appender.logfile.File=target/spring.log
 log4j.appender.logfile.layout=org.apache.log4j.PatternLayout
 log4j.appender.logfile.layout.ConversionPattern=%d %p [%c] - %m%n
 ```
-## 4.´´½¨°üºÍÀà
-Õâ¶¼²»»á¾Í³ÃÔç»ØÈ¥ÖØÑ§JavaÈ¥¡£
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/76d4483d888f4c5380446c00348dc3c1.png)
+## 4.åˆ›å»ºåŒ…å’Œç±»
+è¿™éƒ½ä¸ä¼šå°±è¶æ—©å›å»é‡å­¦Javaå»ã€‚
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/76d4483d888f4c5380446c00348dc3c1.png)
+
 
 ```bash
 package com.atguigu.hdfs;
@@ -129,37 +161,42 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class HdfsClient {
-    //Á¬½Ó¼¯ÈºµÄnnµØÖ·
+    //è¿æ¥é›†ç¾¤çš„nnåœ°å€
 
     @Test
     public void testmkdir() throws URISyntaxException, IOException, InterruptedException {
-        //Á¬½ÓµØÖ·
+        //è¿æ¥åœ°å€
         URI uri=new URI("hdfs://hadoop102:8020");
-        //ÅäÖÃÎÄ¼ş
+        //é…ç½®æ–‡ä»¶
         Configuration configuration=new Configuration();
-        //ÓÃ»§
+        //ç”¨æˆ·
         String user="atguigu";
-        //»ñÈ¡¿Í»§¶Ë¶ÔÏó
+        //è·å–å®¢æˆ·ç«¯å¯¹è±¡
         FileSystem fs=FileSystem.get(uri,configuration,user);
-        //´´½¨Ò»¸öÎÄ¼ş¼Ğ
+        //åˆ›å»ºä¸€ä¸ªæ–‡ä»¶å¤¹
         fs.mkdirs(new Path("/xiyou/huaguoshan"));
-        //¹Ø±Õ×ÊÔ´
+        //å…³é—­èµ„æº
         fs.close();
     }
 }
 ```
-## 5.Æô¶¯¼¯Èº½øĞĞ²âÊÔ
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/b2a39f3649ab4ce1bf0fd29b071729c7.png)
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/9981179691e545c0b5b6196dfda47a4c.png)
-ÏÖÔÚÎÒÃÇÔËĞĞ³ÌĞò¡£
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/587a91dea3be401b90e82772abdbf5ac.png)
-ÔËĞĞÍ¨¹ı
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/ca130eef8c574f6b97813fc7e45ae7dc.png)
-¿ÉÒÔ¿´µ½¼¯ÈºÀï¶àÁËÒ»¸öÄ¿Â¼
+## 5.å¯åŠ¨é›†ç¾¤è¿›è¡Œæµ‹è¯•
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/b2a39f3649ab4ce1bf0fd29b071729c7.png)
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/9981179691e545c0b5b6196dfda47a4c.png)
+
+ç°åœ¨æˆ‘ä»¬è¿è¡Œç¨‹åºã€‚
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/587a91dea3be401b90e82772abdbf5ac.png)
+
+è¿è¡Œé€šè¿‡
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/ca130eef8c574f6b97813fc7e45ae7dc.png)
+å¯ä»¥çœ‹åˆ°é›†ç¾¤é‡Œå¤šäº†ä¸€ä¸ªç›®å½•
 
 
 
 ---
 
-# ×Ü½á
-ÓÉÓÚÆª·ù¹ØÏµ£¬Õâ´Î¾Í¼ÇÂ¼µ½ÕâÀï£¬Õâ´ÎÍê³ÉÁË»ù±¾µÄ¿ò¼Ü´î½¨£¬Ê£ÏÂµÄ´úÂëÏÂ´Î¼ÌĞø±àĞ´¡£
+# æ€»ç»“
+ç”±äºç¯‡å¹…å…³ç³»ï¼Œè¿™æ¬¡å°±è®°å½•åˆ°è¿™é‡Œï¼Œè¿™æ¬¡å®Œæˆäº†åŸºæœ¬çš„æ¡†æ¶æ­å»ºï¼Œå‰©ä¸‹çš„ä»£ç ä¸‹æ¬¡ç»§ç»­ç¼–å†™ã€‚
