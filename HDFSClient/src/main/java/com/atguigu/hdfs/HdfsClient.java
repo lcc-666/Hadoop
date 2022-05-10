@@ -1,17 +1,15 @@
 package com.atguigu.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileSystem;
-import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.yarn.webapp.hamlet2.Hamlet;
+import org.apache.hadoop.fs.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Arrays;
 
 public class HdfsClient {
 
@@ -70,5 +68,39 @@ public class HdfsClient {
         //参数 1.源路径 2.目标路径
         fs.rename(new Path("/xiyou/huaguoshan"),new Path("/xiyou/shuiliandong"));
     }
+    @Test
+    //判断是文件夹还是文件
+    public void testFile() throws IOException {
+        FileStatus[] listStatus =fs.listStatus(new Path("/"));
+        for (FileStatus status : listStatus) {
+            if (status.isFile()) {
+                System.out.println("文件："+status.getPath().getName());
+            }else {
+                System.out.println("目录："+status.getPath().getName());
+            }
+        }
+    }
+    @Test
+    //获取文件信息
+    public void fileDetail() throws IOException {
+        RemoteIterator<LocatedFileStatus> listFiles = fs.listFiles(new Path("/"), true);
 
+        while (listFiles.hasNext()) {
+            LocatedFileStatus fileStatus = listFiles.next();
+
+            System.out.println("========" + fileStatus.getPath() + "=========");
+            System.out.println(fileStatus.getPermission());
+            System.out.println(fileStatus.getOwner());
+            System.out.println(fileStatus.getGroup());
+            System.out.println(fileStatus.getLen());
+            System.out.println(fileStatus.getModificationTime());
+            System.out.println(fileStatus.getReplication());
+            System.out.println(fileStatus.getBlockSize());
+            System.out.println(fileStatus.getPath().getName());
+
+            // 获取块信息
+            BlockLocation[] blockLocations = fileStatus.getBlockLocations();
+            System.out.println(Arrays.toString(blockLocations));
+        }
+    }
 }
