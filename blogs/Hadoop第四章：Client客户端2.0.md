@@ -1,51 +1,57 @@
-# ÏµÁĞÎÄÕÂÄ¿Â¼
-# ÏµÁĞÎÄÕÂÄ¿Â¼
-[HadoopµÚÒ»ÕÂ£º»·¾³´î½¨](https://blog.csdn.net/weixin_50835854/article/details/124135328)
-[HadoopµÚ¶şÕÂ£º¼¯Èº´î½¨£¨ÉÏ£©](https://blog.csdn.net/weixin_50835854/article/details/124152234?spm=1001.2014.3001.5501)
-[HadoopµÚ¶şÕÂ£º¼¯Èº´î½¨£¨ÖĞ£©](https://blog.csdn.net/weixin_50835854/article/details/124194723)
-[HadoopµÚ¶şÕÂ£º¼¯Èº´î½¨£¨ÏÂ£©](https://blog.csdn.net/weixin_50835854/article/details/124211120)
-[HadoopµÚÈıÕÂ£ºShellÃüÁî](https://blog.csdn.net/weixin_50835854/article/details/124456642)
-[HadoopµÚËÄÕÂ£ºClient¿Í»§¶Ë](https://blog.csdn.net/weixin_50835854/article/details/124535515) 
-HadoopµÚËÄÕÂ£ºClient¿Í»§¶Ë2.0
+# ç³»åˆ—æ–‡ç« ç›®å½•
+# ç³»åˆ—æ–‡ç« ç›®å½•
+[Hadoopç¬¬ä¸€ç« ï¼šç¯å¢ƒæ­å»º](https://blog.csdn.net/weixin_50835854/article/details/124135328)
+
+[Hadoopç¬¬äºŒç« ï¼šé›†ç¾¤æ­å»ºï¼ˆä¸Šï¼‰](https://blog.csdn.net/weixin_50835854/article/details/124152234?spm=1001.2014.3001.5501)
+
+[Hadoopç¬¬äºŒç« ï¼šé›†ç¾¤æ­å»ºï¼ˆä¸­ï¼‰](https://blog.csdn.net/weixin_50835854/article/details/124194723)
+
+[Hadoopç¬¬äºŒç« ï¼šé›†ç¾¤æ­å»ºï¼ˆä¸‹ï¼‰](https://blog.csdn.net/weixin_50835854/article/details/124211120)
+
+[Hadoopç¬¬ä¸‰ç« ï¼šShellå‘½ä»¤](https://blog.csdn.net/weixin_50835854/article/details/124456642)
+
+[Hadoopç¬¬å››ç« ï¼šClientå®¢æˆ·ç«¯](https://blog.csdn.net/weixin_50835854/article/details/124535515) 
+
+Hadoopç¬¬å››ç« ï¼šClientå®¢æˆ·ç«¯2.0
 
 ---
 
-@[TOC](ÎÄÕÂÄ¿Â¼)
+@[TOC](æ–‡ç« ç›®å½•)
 
 ---
 
-# Ç°ÑÔ
-ÔÚÉÏÒ»´ÎµÄ²©¿ÍÖĞÎÒÃÇÍê³ÉÁËÁËClientµÄ»ù´¡Ä£°å£¬Õâ´ÎÎÒÃÇ½«ÆäÍêÉÆ¡£
+# å‰è¨€
+åœ¨ä¸Šä¸€æ¬¡çš„åšå®¢ä¸­æˆ‘ä»¬å®Œæˆäº†äº†Clientçš„åŸºç¡€æ¨¡æ¿ï¼Œè¿™æ¬¡æˆ‘ä»¬å°†å…¶å®Œå–„ã€‚
 
 ---
 
-`ÌáÊ¾£ºÒÔÏÂÊÇ±¾ÆªÎÄÕÂÕıÎÄÄÚÈİ£¬ÏÂÃæ°¸Àı¿É¹©²Î¿¼`
+`æç¤ºï¼šä»¥ä¸‹æ˜¯æœ¬ç¯‡æ–‡ç« æ­£æ–‡å†…å®¹ï¼Œä¸‹é¢æ¡ˆä¾‹å¯ä¾›å‚è€ƒ`
 
-# Ò»¡¢¼òµ¥·â×°
-ºËĞÄ´úÂë
+# ä¸€ã€ç®€å•å°è£…
+æ ¸å¿ƒä»£ç 
 
 ```java
 public class HdfsClient {
-    //Á¬½Ó¼¯ÈºµÄnnµØÖ·
+    //è¿æ¥é›†ç¾¤çš„nnåœ°å€
 
     @Test
     public void testmkdir() throws URISyntaxException, IOException, InterruptedException {
-        //Á¬½ÓµØÖ·
+        //è¿æ¥åœ°å€
         URI uri=new URI("hdfs://hadoop102:8020");
-        //ÅäÖÃÎÄ¼ş
+        //é…ç½®æ–‡ä»¶
         Configuration configuration=new Configuration();
-        //ÓÃ»§
+        //ç”¨æˆ·
         String user="atguigu";
-        //»ñÈ¡¿Í»§¶Ë¶ÔÏó
+        //è·å–å®¢æˆ·ç«¯å¯¹è±¡
         FileSystem fs=FileSystem.get(uri,configuration,user);
-        //´´½¨Ò»¸öÎÄ¼ş¼Ğ
+        //åˆ›å»ºä¸€ä¸ªæ–‡ä»¶å¤¹
         fs.mkdirs(new Path("/xiyou/huaguoshan"));
-        //¹Ø±Õ×ÊÔ´
+        //å…³é—­èµ„æº
         fs.close();
     }
 }
 ```
-¿ÉÒÔ¿´µ½ÎÒÃÇ½«Õû¸ö¹ı³ÌÖĞµÄÁ¬½Ó¼¯Èº£¬Ö´ĞĞÃüÁî£¬ÒÔ¼°×îºóµÄÁ¬½Ó¶Ï¿ª£¬¶¼Ğ´µ½ÁËÒ»¸öº¯ÊıÖĞ£¬ÕâºÜÃ÷ÏÔ²»ÀûÓÃ´úÂëµÄÎÒÃÇÓ¦¸Ã½«Æä·Ö±ğ·â×°ÔÚÈı¸öº¯ÊıÖĞ¡£
+å¯ä»¥çœ‹åˆ°æˆ‘ä»¬å°†æ•´ä¸ªè¿‡ç¨‹ä¸­çš„è¿æ¥é›†ç¾¤ï¼Œæ‰§è¡Œå‘½ä»¤ï¼Œä»¥åŠæœ€åçš„è¿æ¥æ–­å¼€ï¼Œéƒ½å†™åˆ°äº†ä¸€ä¸ªå‡½æ•°ä¸­ï¼Œè¿™å¾ˆæ˜æ˜¾ä¸åˆ©ç”¨ä»£ç çš„æˆ‘ä»¬åº”è¯¥å°†å…¶åˆ†åˆ«å°è£…åœ¨ä¸‰ä¸ªå‡½æ•°ä¸­ã€‚
 
 ```java
 public class HdfsClient {
@@ -54,52 +60,57 @@ public class HdfsClient {
 
     @Before
     public void init() throws URISyntaxException, IOException, InterruptedException {
-        //Á¬½ÓµØÖ·
+        //è¿æ¥åœ°å€
         URI uri=new URI("hdfs://hadoop102:8020");
-        //ÅäÖÃÎÄ¼ş
+        //é…ç½®æ–‡ä»¶
         Configuration configuration=new Configuration();
-        //ÓÃ»§
+        //ç”¨æˆ·
         String user="atguigu";
-        //»ñÈ¡¿Í»§¶Ë¶ÔÏó
+        //è·å–å®¢æˆ·ç«¯å¯¹è±¡
         fs = FileSystem.get(uri,configuration,user);
     }
 
     @After
     public void close() throws IOException {
-        //¹Ø±Õ×ÊÔ´
+        //å…³é—­èµ„æº
         fs.close();
     }
 
     @Test
     public void testmkdir() throws  IOException {
-        //´´½¨Ò»¸öÎÄ¼ş¼Ğ
+        //åˆ›å»ºä¸€ä¸ªæ–‡ä»¶å¤¹
         fs.mkdirs(new Path("/xiyou/huaguoshan1"));
     }
 }
 ```
-ÏÖÔÚÎÒÃÇÔÚ´´½¨Ò»¸öÎÄ¼ş¡£
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/c1abbefaadea4de296fedaaa8afacddc.png)
-ÏÖÔÚÎÒÃÇÖ»ĞèÒªÔÚÃüÁî²¿·Ö½øĞĞĞŞ¸Ä¼´¿É¡£
-# ¶ş¡¢ÉÏ´«ÎÄ¼ş
-ºËĞÄ´úÂë
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/2d2b5fafdd55454696d6a6dcfd8a8c69.png)
-Ö»²âÊÔÄ³Ò»¸ötest
+ç°åœ¨æˆ‘ä»¬åœ¨åˆ›å»ºä¸€ä¸ªæ–‡ä»¶ã€‚
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/c1abbefaadea4de296fedaaa8afacddc.png)
+
+ç°åœ¨æˆ‘ä»¬åªéœ€è¦åœ¨å‘½ä»¤éƒ¨åˆ†è¿›è¡Œä¿®æ”¹å³å¯ã€‚
+# äºŒã€ä¸Šä¼ æ–‡ä»¶
+æ ¸å¿ƒä»£ç 
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/2d2b5fafdd55454696d6a6dcfd8a8c69.png)
+
+åªæµ‹è¯•æŸä¸€ä¸ªtest
 ```java
     @Test
     public void testPut() throws IOException {
-        //²ÎÊı 1.ÊÇ·ñÉ¾³ıÔ´ÎÄ¼ş 2.ÊÇ·ñÇ¿ÖÆ¸²¸Ç 3.±¾µØÎÄ¼şÂ·¾¶ 4.hadoopÎÄ¼şÂ·¾¶
+        //å‚æ•° 1.æ˜¯å¦åˆ é™¤æºæ–‡ä»¶ 2.æ˜¯å¦å¼ºåˆ¶è¦†ç›– 3.æœ¬åœ°æ–‡ä»¶è·¯å¾„ 4.hadoopæ–‡ä»¶è·¯å¾„
         fs.copyFromLocalFile(false,false,new Path("D:\\learn\\test.txt"),new Path("/"));
     }
 ```
 
-## ¸±±¾ÊıÁ¿ÓÅÏÈ¼¶
+## å‰¯æœ¬æ•°é‡ä¼˜å…ˆçº§
 
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/a2c71cab0180485b85698ae6aad0e81d.png)
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/a2c71cab0180485b85698ae6aad0e81d.png)
 
-Õı³£Çé¿öÏÂ£¬ÕâÀï»á³öÏÖÈı¸ö¸±±¾£¬ÒòÎªÔÛÃÇ¼¯ÈºÓĞÈı¸ö½Úµã£¬µ«ÊÇÕâ¸öÊıÁ¿¿ÉÒÔÉèÖÃÂğ£¬µ±È»ÊÇ¿ÉÒÔµÄ£¬ÎÒÃÇ¿ÉÒÔÔÚÏîÄ¿µÄÅäÖÃÎÄ¼şÎÄ¼şÀïÉèÖÃ£¨hdfs-site.xml£©£¬µ«ÕâÑùÁé»îĞÔ»áÏÂ½µ£¬ËùÒÔ¾Í²»½éÉÜÁË£¬ÔÛÃÇÖ®ËµÔÚ¶ÀÁ¢ÏîÄ¿ÖĞÈçºÎÉèÖÃ¡£
+æ­£å¸¸æƒ…å†µä¸‹ï¼Œè¿™é‡Œä¼šå‡ºç°ä¸‰ä¸ªå‰¯æœ¬ï¼Œå› ä¸ºå’±ä»¬é›†ç¾¤æœ‰ä¸‰ä¸ªèŠ‚ç‚¹ï¼Œä½†æ˜¯è¿™ä¸ªæ•°é‡å¯ä»¥è®¾ç½®å—ï¼Œå½“ç„¶æ˜¯å¯ä»¥çš„ï¼Œæˆ‘ä»¬å¯ä»¥åœ¨é¡¹ç›®çš„é…ç½®æ–‡ä»¶æ–‡ä»¶é‡Œè®¾ç½®ï¼ˆhdfs-site.xmlï¼‰ï¼Œä½†è¿™æ ·çµæ´»æ€§ä¼šä¸‹é™ï¼Œæ‰€ä»¥å°±ä¸ä»‹ç»äº†ï¼Œå’±ä»¬ä¹‹è¯´åœ¨ç‹¬ç«‹é¡¹ç›®ä¸­å¦‚ä½•è®¾ç½®ã€‚
 
-ÔÚresourcesÄ¿Â¼ÏÂ´´½¨Ò»¸öhdfs-site.xmlÎÄ¼ş£¬Èç¹ûÒªĞŞ¸ÄÅäÖÃÎÄ¼ş£¬¾ÍÖ±½ÓÔÚhadoopµÄhdfs-site.xmlÎÄ¼şÖĞÉèÖÃ¡£
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/6d793a19e54b4d38ac833d19a6fc65ce.png)
+åœ¨resourcesç›®å½•ä¸‹åˆ›å»ºä¸€ä¸ªhdfs-site.xmlæ–‡ä»¶ï¼Œå¦‚æœè¦ä¿®æ”¹é…ç½®æ–‡ä»¶ï¼Œå°±ç›´æ¥åœ¨hadoopçš„hdfs-site.xmlæ–‡ä»¶ä¸­è®¾ç½®ã€‚
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/6d793a19e54b4d38ac833d19a6fc65ce.png)
 
 ```java
 <?xml version="1.0" encoding="UTF-8"?>
@@ -113,97 +124,105 @@ public class HdfsClient {
 </configuration>
 
 ```
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/08c0150ff6f84f04b9aab01938c17030.png)
-ÕâÀïÎÒÃÇ°É¸±±¾ÊıÁ¿ÉèÖÃÎª1£¬ÏÖÔÚÔÙ´ÎÉÏ´«¡£Õâ´Î×¢ÒâÒªÔÊĞí¸²¸Ç¡£
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/073e4f09322a46b6827e22bbe4651130.png)
-ÏÖÔÚÎÒÕâ¸öÏîÄ¿ÀïÉÏ´«µÄÎÄ¼şµÄ¸±±¾ÊıÍ³Ò»¸ü¸ÄÁË£¬µ«ÊÇ»¹ÊÇ²»¹»Áé»îÎÒÏ£ÍûÃ¿Ò»´ÎÉÏ´«µÄ¸±±¾Êı¶¼ÓĞÎÒ¿ØÖÆ£¬ËùÒÔÎÒÃÇÑ½ĞŞ¸ÄÁ¬½ÓÅäÖÃ¡£
-ºËĞÄ´úÂë
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/08c0150ff6f84f04b9aab01938c17030.png)
+
+è¿™é‡Œæˆ‘ä»¬å§å‰¯æœ¬æ•°é‡è®¾ç½®ä¸º1ï¼Œç°åœ¨å†æ¬¡ä¸Šä¼ ã€‚è¿™æ¬¡æ³¨æ„è¦å…è®¸è¦†ç›–ã€‚
+
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/073e4f09322a46b6827e22bbe4651130.png)
+
+ç°åœ¨æˆ‘è¿™ä¸ªé¡¹ç›®é‡Œä¸Šä¼ çš„æ–‡ä»¶çš„å‰¯æœ¬æ•°ç»Ÿä¸€æ›´æ”¹äº†ï¼Œä½†æ˜¯è¿˜æ˜¯ä¸å¤Ÿçµæ´»æˆ‘å¸Œæœ›æ¯ä¸€æ¬¡ä¸Šä¼ çš„å‰¯æœ¬æ•°éƒ½æœ‰æˆ‘æ§åˆ¶ï¼Œæ‰€ä»¥æˆ‘ä»¬å‘€ä¿®æ”¹è¿æ¥é…ç½®ã€‚
+æ ¸å¿ƒä»£ç 
 ```java
     @Before
     public void init() throws URISyntaxException, IOException, InterruptedException {
-        //Á¬½ÓµØÖ·
+        //è¿æ¥åœ°å€
         URI uri=new URI("hdfs://hadoop102:8020");
-        //ÅäÖÃÎÄ¼ş
+        //é…ç½®æ–‡ä»¶
         Configuration configuration=new Configuration();
-        //ÅäÖÃ¸±±¾Êı
+        //é…ç½®å‰¯æœ¬æ•°
         configuration.set("dfs.replication", "2");
-        //ÓÃ»§
+        //ç”¨æˆ·
         String user="atguigu";
-        //»ñÈ¡¿Í»§¶Ë¶ÔÏó
+        //è·å–å®¢æˆ·ç«¯å¯¹è±¡
         fs = FileSystem.get(uri,configuration,user);
     }
 ```
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/316c2f4aa5dc43dd998808f36e5c35e5.png)
-ËùÒÔÕâÀï¼ÇÂ¼ÓÅÏÈ¼¶
-ÅäÖÃÎÄ¼ş<ÏîÄ¿ÅäÖÃ<´úÂëÅäÖÃ¡£
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/316c2f4aa5dc43dd998808f36e5c35e5.png)
 
-# Èı¡¢ÏÂÔØÎÄ¼ş
-ºËĞÄ´úÂë
+æ‰€ä»¥è¿™é‡Œè®°å½•ä¼˜å…ˆçº§
+é…ç½®æ–‡ä»¶<é¡¹ç›®é…ç½®<ä»£ç é…ç½®ã€‚
+
+# ä¸‰ã€ä¸‹è½½æ–‡ä»¶
+æ ¸å¿ƒä»£ç 
 
 ```java
 @Test
-    //ÎÄ¼şÏÂÔØ
+    //æ–‡ä»¶ä¸‹è½½
     public void testGet() throws IOException {
-        //²ÎÊı 1.ÊÇ·ñÉ¾³ıÔ´ÎÄ¼ş 2.hadoopÂ·¾¶ 3.±¾µØÂ·¾¶ 4.ÊÇ·ñĞ£Ñé
+        //å‚æ•° 1.æ˜¯å¦åˆ é™¤æºæ–‡ä»¶ 2.hadoopè·¯å¾„ 3.æœ¬åœ°è·¯å¾„ 4.æ˜¯å¦æ ¡éªŒ
         fs.copyToLocalFile(false,new Path("/test.txt"),new Path("C:\\Users\\admin\\Desktop"),false);
     }
 ```
-ÎÒµÄÏÂÔØÂ·¾¶Ñ¡ÔñµÄÊÇ×ÀÃæ¡£
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/04cc4e3667bc4b89b6af518c13681bd5.png)
-ÕâÀïËµÒ»ÏÂÕâ¸öĞ£Ñé£¬¾ÍhadoopµÄÎÊ¼Û¹şÏ£Ò»ÏÂ£¬È»ºó±¾µØÎÄ¼şÒ²¹şÏ£Ò»ÏÂ£¬Èç¹ûÒ»Ñù£¬¾ÍËµÃ÷Ã»ÓĞ²úÉúÊı¾İ¶ªÊ§¡£
+æˆ‘çš„ä¸‹è½½è·¯å¾„é€‰æ‹©çš„æ˜¯æ¡Œé¢ã€‚
 
-# ËÄ¡¢É¾³ıÎÄ¼ş
-ºËĞÄ´úÂë
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/04cc4e3667bc4b89b6af518c13681bd5.png)
+
+è¿™é‡Œè¯´ä¸€ä¸‹è¿™ä¸ªæ ¡éªŒï¼Œå°±hadoopçš„é—®ä»·å“ˆå¸Œä¸€ä¸‹ï¼Œç„¶åæœ¬åœ°æ–‡ä»¶ä¹Ÿå“ˆå¸Œä¸€ä¸‹ï¼Œå¦‚æœä¸€æ ·ï¼Œå°±è¯´æ˜æ²¡æœ‰äº§ç”Ÿæ•°æ®ä¸¢å¤±ã€‚
+
+# å››ã€åˆ é™¤æ–‡ä»¶
+æ ¸å¿ƒä»£ç 
 
 ```java
     @Test
-    //ÎÄ¼şÉ¾³ı
+    //æ–‡ä»¶åˆ é™¤
     public void tessRm() throws IOException {
-        //²ÎÊı 1.É¾³ıÄ¿Â¼ 2.ÊÇ·ñµİ¹é
+        //å‚æ•° 1.åˆ é™¤ç›®å½• 2.æ˜¯å¦é€’å½’
         fs.delete(new Path("/test.txt"),false);
 
         fs.delete(new Path("/wcinput"),true);
 
     }
 ```
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/68cff1386d2045aaaa49d6da43943566.png)
-×¢Òâ¿ÕÄ¿Â¼ºÍÎÄ¼ş¿ÉÒÔÖ±½ÓÉ¾³ı£¬·Ç¿ÕÄ¿Â¼ĞèÒªµİ¹é¡£
-# Îå¡¢¸üÃûºÍÒÆ¶¯
-ºËĞÄ´úÂë
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/68cff1386d2045aaaa49d6da43943566.png)
+
+æ³¨æ„ç©ºç›®å½•å’Œæ–‡ä»¶å¯ä»¥ç›´æ¥åˆ é™¤ï¼Œéç©ºç›®å½•éœ€è¦é€’å½’ã€‚
+# äº”ã€æ›´åå’Œç§»åŠ¨
+æ ¸å¿ƒä»£ç 
 ```java
     @Test
-    //ÎÄ¼şÒÆ¶¯ºÍ¸üÃû
+    //æ–‡ä»¶ç§»åŠ¨å’Œæ›´å
     public void testmv() throws IOException {
-    	//²ÎÊı 1.Ô´Â·¾¶ 2.Ä¿±êÂ·¾¶
+    	//å‚æ•° 1.æºè·¯å¾„ 2.ç›®æ ‡è·¯å¾„
         fs.rename(new Path("/xiyou/huaguoshan"),new Path("/xiyou/shuiliandong"));
     }
 ```
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/2b4cc480907a44258e2d846b585a177a.png)
-¸üÃûºÍÒÆ¶¯ÊÇÀàËÆµÄÖ»ÒªĞŞ¸ÄÂ·¾¶¼´¿É¡£
-## Áù¡¢ÊÇ·ñÎªÎÄ¼ş
-ĞÅÏ¢´úÂë
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/2b4cc480907a44258e2d846b585a177a.png)
+
+æ›´åå’Œç§»åŠ¨æ˜¯ç±»ä¼¼çš„åªè¦ä¿®æ”¹è·¯å¾„å³å¯ã€‚
+## å…­ã€æ˜¯å¦ä¸ºæ–‡ä»¶
+ä¿¡æ¯ä»£ç 
 
 ```java
     @Test
-    //ÅĞ¶ÏÊÇÎÄ¼ş¼Ğ»¹ÊÇÎÄ¼ş
+    //åˆ¤æ–­æ˜¯æ–‡ä»¶å¤¹è¿˜æ˜¯æ–‡ä»¶
     public void testFile() throws IOException {
         FileStatus[] listStatus =fs.listStatus(new Path("/"));
         for (FileStatus status : listStatus) {
             if (status.isFile()) {
-                System.out.println("ÎÄ¼ş£º"+status.getPath().getName());
+                System.out.println("æ–‡ä»¶ï¼š"+status.getPath().getName());
             }else {
-                System.out.println("Ä¿Â¼£º"+status.getPath().getName());
+                System.out.println("ç›®å½•ï¼š"+status.getPath().getName());
             }
         }
     }
 ```
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/f5ecfb009d3a406d984196454c97f55f.png)
-## Æß¡¢²é¿´ÎÄ¼şÏêÇé
-ºËĞÄ´úÂë
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/f5ecfb009d3a406d984196454c97f55f.png)
+## ä¸ƒã€æŸ¥çœ‹æ–‡ä»¶è¯¦æƒ…
+æ ¸å¿ƒä»£ç 
 
 ```java
 @Test
-    //»ñÈ¡ÎÄ¼şĞÅÏ¢
+    //è·å–æ–‡ä»¶ä¿¡æ¯
     public void fileDetail() throws IOException {
         RemoteIterator<LocatedFileStatus> listFiles = fs.listFiles(new Path("/"), true);
 
@@ -220,16 +239,17 @@ public class HdfsClient {
             System.out.println(fileStatus.getBlockSize());
             System.out.println(fileStatus.getPath().getName());
 
-            // »ñÈ¡¿éĞÅÏ¢
+            // è·å–å—ä¿¡æ¯
             BlockLocation[] blockLocations = fileStatus.getBlockLocations();
             System.out.println(Arrays.toString(blockLocations));
         }
     }
 ```
-![ÔÚÕâÀï²åÈëÍ¼Æ¬ÃèÊö](https://img-blog.csdnimg.cn/dd1204c01e5f417f832eecd798fab201.png)
-ÓÉÓÚ¼¯ÈºÊÇ´ÓĞÂ´î½¨ÁËÒ»´Î£¬Àï±ßÃ»É¶¶«Î÷£¬Ëæ±ãÉÏ´«¸öÎÄ¼ş²âÊÔÒ»ÏÂ¾ÍĞĞ¡£
+![åœ¨è¿™é‡Œæ’å…¥å›¾ç‰‡æè¿°](https://img-blog.csdnimg.cn/dd1204c01e5f417f832eecd798fab201.png)
+
+ç”±äºé›†ç¾¤æ˜¯ä»æ–°æ­å»ºäº†ä¸€æ¬¡ï¼Œé‡Œè¾¹æ²¡å•¥ä¸œè¥¿ï¼Œéšä¾¿ä¸Šä¼ ä¸ªæ–‡ä»¶æµ‹è¯•ä¸€ä¸‹å°±è¡Œã€‚
 
 ---
 
-# ×Ü½á
-ÓÃJava½øĞĞ¿Í»§¶ËµÄ´î½¨µ½ÕâÀï¾Í¸æÒ»¶ÎÂäÁË¡£
+# æ€»ç»“
+ç”¨Javaè¿›è¡Œå®¢æˆ·ç«¯çš„æ­å»ºåˆ°è¿™é‡Œå°±å‘Šä¸€æ®µè½äº†ã€‚
