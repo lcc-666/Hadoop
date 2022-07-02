@@ -26,3 +26,7 @@ Hadoop第四章：Client客户端
 2022.5.11
 
 Hadoop第四章：Client客户端2.0
+
+2022.7.2
+
+Hadoop第五章：词频统计
