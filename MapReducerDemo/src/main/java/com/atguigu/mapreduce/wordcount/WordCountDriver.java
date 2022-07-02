@@ -19,7 +19,7 @@ public class WordCountDriver {
         job.setJarByClass(WordCountDriver.class);
 
         job.setMapperClass(WordCountMapper.class);
-        job.setReducerClass(WrappedReducer.class);
+        job.setReducerClass(WordCountReducer.class);
 
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
