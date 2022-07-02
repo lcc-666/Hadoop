@@ -1,11 +1,18 @@
 # 系列文章目录
 [Hadoop第一章：环境搭建](https://blog.csdn.net/weixin_50835854/article/details/124135328)
+
 [Hadoop第二章：集群搭建（上）](https://blog.csdn.net/weixin_50835854/article/details/124152234?spm=1001.2014.3001.5501)
+
 [Hadoop第二章：集群搭建（中）](https://blog.csdn.net/weixin_50835854/article/details/124194723)
+
 [Hadoop第二章：集群搭建（下）](https://blog.csdn.net/weixin_50835854/article/details/124211120)
+
 [Hadoop第三章：Shell命令](https://blog.csdn.net/weixin_50835854/article/details/124456642)
+
 [Hadoop第四章：Client客户端](https://blog.csdn.net/weixin_50835854/article/details/124535515) 
+
 [Hadoop第四章：Client客户端2.0](https://blog.csdn.net/weixin_50835854/article/details/124654823)
+
 Hadoop第五章：词频统计
 
 ---
@@ -175,15 +182,23 @@ public class WordCountDriver {
 # 四、本地运行
 之前已经配置过本地的hadoop环境了，就不再重复了。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/9abdec425b064316abeca8fcd330c75b.png)
+
 这代表运行成功
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/3f91e7b523cc48a49e793b5a638f4f83.png)
+
 到自己设置的输出目录进行查看。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/26426b9624f948c380e1bfe758f29bea.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/749fca304eb8432ab5f68ae95f05a9e1.png)
+
 # 五、集群运行
 ## 1.添加依赖并打包
 为了方便讲个文件上传到集群，我们需要打包，所以要先添加打包的依赖。
+
 在pom.xml进行依赖添加
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/3a80f8a9a64344d086459c6640b49372.png)
 
 
@@ -219,26 +234,40 @@ public class WordCountDriver {
     </build>
 ```
 刚刚的代码我们需要人工设置输入输出路径，在集群中，显然是很不方便的，所以咱们再写一个包，将之前的三个代码一次性复制过来简单修改一下。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/27d41888f9a34cff806656679dc6cd2b.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2d9661a3d4b74e9282a4d41982e27bea.png)
+
 现在，我们进行打包
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/14009539d0fa4739a5019f186811ad8c.png)
+
 完成后，可在右边查看
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/7e2f38715b59484e817ae242df32e2f1.png)
+
 可以看到，这里有两个jar包，大小差别很大，说一下有什么区别，第一个jar包里只包含代码需要将需要的hadoop运行环境提前配置好，第二个jar含有需要的依赖，可以直接调用。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/b5c2784d51f9484f97d4c9b3b2b22ecc.png)
 ## 2.启动集群并上传jar包
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/ea0e2c8cad7f4f0192fa6ab281fedcaa.png)
-可以简单修改一下文件名。![在这里插入图片描述](https://img-blog.csdnimg.cn/99bc1cd90d534cc99bf6d846268e32d7.png)
+
+可以简单修改一下文件名。
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/99bc1cd90d534cc99bf6d846268e32d7.png)
+
 在集群上传测试数据。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/9aa507c16e774f73ab1fa93b16767c52.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/ae2e1418990e48cab82e13166ffa2622.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/92b482e0f5244174b22965c22e835969.png)
+
 集群运行。
 hadoop jar 包命 包类 输出路径 输出路径
 包类可以从idea中获取
-com.atguigu.mapreduce.wordcount2.WordCountDriver![在这里插入图片描述](https://img-blog.csdnimg.cn/1ba9cd48afe64337a3e1ea88c6a07a95.png)
+com.atguigu.mapreduce.wordcount2.WordCountDriver
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/1ba9cd48afe64337a3e1ea88c6a07a95.png)
 ```java
 hadoop jar wc.jar com.atguigu.mapreduce.wordcount2.WordCountDriver /wcinput /wcoutput
 ```
