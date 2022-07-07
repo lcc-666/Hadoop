@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.writable;
+package com.atguigu.mapreduce.writableComparable;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -19,14 +19,14 @@ public class FlowDriver {
         job.setMapperClass(FlowMapper.class);
         job.setReducerClass(FlowReducer.class);
 
-        job.setMapOutputKeyClass(FlowBean.class);
-        job.setMapOutputValueClass(Text.class);
+        job.setMapOutputKeyClass(Text.class);
+        job.setMapOutputValueClass(FlowBean.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
 
-        FileInputFormat.setInputPaths(job, new Path("D:\\learn\\hadoop\\writable\\output"));
-        FileOutputFormat.setOutputPath(job, new Path("D:\\learn\\hadoop\\writable\\output2"));
+        FileInputFormat.setInputPaths(job, new Path("D:\\learn\\hadoop\\writable\\input"));
+        FileOutputFormat.setOutputPath(job, new Path("D:\\learn\\hadoop\\writable\\output"));
 
         boolean result = job.waitForCompletion(true);
         System.exit(result ? 0 : 1);

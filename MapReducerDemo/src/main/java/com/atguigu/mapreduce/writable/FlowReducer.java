@@ -5,22 +5,12 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class FlowReducer extends Reducer<Text, FlowBean, Text, FlowBean> {
-    private FlowBean ontV = new FlowBean();
-
+public class FlowReducer extends Reducer<FlowBean,Text, Text, FlowBean> {
     @Override
-    protected void reduce(Text key, Iterable<FlowBean> values, Reducer<Text, FlowBean, Text, FlowBean>.Context context) throws IOException, InterruptedException {
-        long toatlUp = 0;
-        long toatlDown = 0;
-        for (FlowBean value : values) {
-            toatlUp += value.getUpFlow();
-            toatlDown += value.getDownFlow();
+    protected void reduce(FlowBean key, Iterable<Text> values, Reducer<FlowBean, Text, Text, FlowBean>.Context context) throws IOException, InterruptedException {
+
+        for (Text value : values) {
+            context.write(value,key);
         }
-        ontV.setUpFlow(toatlUp);
-        ontV.setDownFlow(toatlDown);
-        ontV.setSumFlow();
-
-        context.write(key, ontV);
-
     }
 }
