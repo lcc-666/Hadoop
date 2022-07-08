@@ -1,14 +1,23 @@
 # 系列文章目录
 
 [Hadoop第一章：环境搭建](https://blog.csdn.net/weixin_50835854/article/details/124135328)
+
 [Hadoop第二章：集群搭建（上）](https://blog.csdn.net/weixin_50835854/article/details/124152234?spm=1001.2014.3001.5501)
+
 [Hadoop第二章：集群搭建（中）](https://blog.csdn.net/weixin_50835854/article/details/124194723)
+
 [Hadoop第二章：集群搭建（下）](https://blog.csdn.net/weixin_50835854/article/details/124211120)
+
 [Hadoop第三章：Shell命令](https://blog.csdn.net/weixin_50835854/article/details/124456642)
+
 [Hadoop第四章：Client客户端](https://blog.csdn.net/weixin_50835854/article/details/124535515) 
+
 [Hadoop第四章：Client客户端2.0](https://blog.csdn.net/weixin_50835854/article/details/124654823)
+
 [Hadoop第五章：词频统计](https://blog.csdn.net/weixin_50835854/article/details/125576503)
+
 [Hadoop第五章：序列化](https://blog.csdn.net/weixin_50835854/article/details/125605565)
+
 Hadoop第五章：几个案例
 
 
