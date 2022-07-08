@@ -213,14 +213,18 @@ public class FlowBean implements WritableComparable<FlowBean> {
     }
 ```
 然后修改输入输出再次运行查看。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/322ef148a374475dbe5e5099ce787172.png)
+
 # 三、writableComparable排序（区内排序）
 ##  1.需求分析
 基于前一个需求，增加自定义分区类，分区按照省份手机号设置。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/231cfaf366a841dd98e28005d45cdf2b.png)
 ## 2.代码编写
 创建一个新的包，将上一个包中需要的class考过来。然后再新建一个分区器。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/169b2c61d2304605a7169d5a613b0d97.png)
+
 编写ProvincePartitioner2
 ```java
 package com.atguigu.mapreduce.partitionerandwritableComparable;
@@ -253,6 +257,7 @@ public class ProvincePartitioner2 extends Partitioner<FlowBean, Text> {
 }
 ```
 在简单修改一下driver的输出，就可以运行查看结果了。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/8ad890ae4d7e4f8d9c23d3793b33a685.png)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/6b788724cb2243c28e435a97a30a0c59.png)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/18de54c7729c4ef598172de6c8a10687.png)
