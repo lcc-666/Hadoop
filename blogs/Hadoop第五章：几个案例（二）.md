@@ -39,10 +39,12 @@ Hadoop第五章：几个案例（二）
 现在又十万条数据，10mapper个节点，1个reducer节点，一条数据可以算出一个结果，每个节点有一万的任务量，如果仅仅由reducer进行求和，此节点需要接受十万个数据，对网络压力比较大，如果使用Combiner，数据可以在各自的mapper节点先求和，这样mapeer就需要接受10个数据，大大减小了网络压力。
 ## 1.需求分析
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2883bfb436bc4318b12adce5ca8578d7.png)
+
 因为咱们要使用Combiner所以只展示方案一。
 ## 2.代码编写
 新创建一个包，并且从之前写好的词频统计中把之前的代码拷贝过来，并新创建一个类
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/4cd2b2efca5a41c99804c4fca570d12d.png)
+
 WordCountCombiner.java
 ```java
 package com.atguigu.mapreduce.combiner;
@@ -112,8 +114,11 @@ public class WordCountDriver {
 咱们先不加入运行一次，查看一下数据。
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/46c622219e5a484ca1828905e2090585.png)
+
 现在把注释去掉在运行一次。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/106b8b7c45f146db9c25562c52bf2fa2.png)
+
 可以明显看到map阶段输出的数据从121减少到了88，这样就可以减轻从map到reducer传输数据的传输压力。
 再用词频统计为例，因为咱们的Combiner做的事情和reducer是一摸一样的，所以可以直接使用reducer.class代替Combiner.class这种情况适用于Combiner阶段和reducer阶段逻辑代码相同。且不会改变最终结果。
 # 二、自定义OutputFormat案例
@@ -122,6 +127,7 @@ public class WordCountDriver {
 
 ## 2.代码编写
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/5cb2412b953847fba113279f6fb8208b.png)
+
 新创建一个包，并且创建3个基本文件，以及两个新需要的类。
 mapper不需要要和修改
 
@@ -281,8 +287,11 @@ public class LogDriver {
 }
 ```
 运行结果
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/4d6e458b91a4432083d9e31a2ff06db7.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/851377c9c01842638bd34124859678c5.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/c7426db1d8654f4bb2a7917f5a507379.png)
 
 # 总结
