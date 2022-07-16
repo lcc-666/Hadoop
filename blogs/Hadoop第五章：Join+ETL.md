@@ -37,10 +37,14 @@ Hadoop第五章：Join/ETL
 
 # 一、Reduce Join案例
 ## 1.需求分析
-通过将关联条件作为Map输出的key，将两表满足Join条件的数据并携带数据所来源的文件信息，发往同一个ReduceTask，在Reduce中进行数据的串联。![在这里插入图片描述](https://img-blog.csdnimg.cn/00824d1c212c4cdea26a67ada6ab58fa.png)
+通过将关联条件作为Map输出的key，将两表满足Join条件的数据并携带数据所来源的文件信息，发往同一个ReduceTask，在Reduce中进行数据的串联。
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/00824d1c212c4cdea26a67ada6ab58fa.png)
 ## 2.代码编写
 新建一个包，并创建需要的类。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2138870b316b4e6fa70ffdbeb8f3a195.png)
+
 TableBean.class
 ```java
 package com.atguigu.mapreduce.reducejoin;
@@ -287,6 +291,7 @@ Map Join适用于一张表十分小、一张表很大的场景。
 
 ## 2.代码编写
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/32c647e216b64b44a622acb7af4485ef.png)
+
 创建一个新的包，创建需要的类。
 MapJoinMapper.class
 
@@ -398,7 +403,9 @@ public class MapJoinDriver {
 # 三、数据清洗（ETL）
 ## 1.需求分析
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/59a71b4fcbba406ea4f0be29df1ad41b.png)
+
 web.log
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/30f001abcdcf4d45adcf69cfd2d96967.png)
 ## 2.代码分析
 WebLogMapper.class
@@ -482,9 +489,13 @@ public class WebLogDriver {
 运行查看结果
 我们先查看一下源文件。
 我使用了VScode查看文件行数。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/67e95eb2cb64441a9cf0f79b780d815c.png)
+
 然后查看运行后的文件。
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/7f331e3c85d741169dab9e297064b065.png)
+
 很明显咱们的数据少了几千条。
 
 # 总结
